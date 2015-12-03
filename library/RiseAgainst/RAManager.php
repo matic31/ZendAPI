@@ -17,16 +17,8 @@ class RiseAgainst_RAManager {
         $concertMapper= new Application_Model_ConcertMapper() ;
          $cons=array();
         foreach($concertMapper->fetchAll() as $row){
-            
-            /*$admin_links=array(
-               $this->view->outputLink($this->view->url(array('controller'=>'Administracija','action'=>'galerije','operacija'=>'izmena','id'=>$row->getId()),'default',true),'Izmeni'), 
-                $this->view->outputLink($this->view->url(array('controller'=>'Administracija','action'=>'galerije','operacija'=>'brisanje','id'=>$row->getId()),'default',true),'Obrisi')
-            );*/
-            //$konvertovan_red=(array)$row;
-            
+          
             $cons[]=$row;
-            
-            
         }
         return $cons;
         

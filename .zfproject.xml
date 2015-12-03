@@ -32,12 +32,17 @@
           <dbTableFile dbTableName="User"/>
           <dbTableFile dbTableName="Concerts"/>
           <dbTableFile dbTableName="Rating"/>
+          <dbTableFile dbTableName="Images"/>
         </dbTableDirectory>
         <modelFile modelName="Concert"/>
         <modelFile modelName="ConcertMapper"/>
         <modelFile modelName="TestModel"/>
         <modelFile modelName="Role"/>
         <modelFile modelName="RoleMapper"/>
+        <modelFile modelName="Gallery"/>
+        <modelFile modelName="GalleryMapper"/>
+        <modelFile modelName="Image"/>
+        <modelFile modelName="ImageMapper"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

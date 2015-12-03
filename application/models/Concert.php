@@ -2,11 +2,11 @@
 
 class Application_Model_Concert
 {
-    protected $_id;
-    protected $_city;
-    protected $_place;
-    protected $_time;
-    protected $_gallery;
+     public $_id;
+     public $_city;
+     public $_place;
+     public $_time;
+     public $_gallery;
     
     
     function getId() {
@@ -27,18 +27,22 @@ class Application_Model_Concert
 
     function setId($_id) {
         $this->_id = $_id;
+        return $this;
     }
 
     function setCity($_city) {
         $this->_city = $_city;
+        return $this;
     }
 
     function setPlace($_place) {
         $this->_place = $_place;
+        return $this;
     }
 
     function setTime($_time) {
         $this->_time = $_time;
+        return $this;
     }
     
     public function getGallery(){
@@ -49,6 +53,10 @@ class Application_Model_Concert
         $this->_gallery=$gallery;
         return $this;
     }
+    public function toArray() {
+        //return array('idConcert' => $this->_id, '');
+    }
+
 
 
 

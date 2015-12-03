@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_ConcertMapper
+class Application_Model_GalleryMapper
 {
 
 protected $_dbTable;
@@ -18,7 +18,7 @@ protected $_dbTable;
     
     public function getDbTable(){
         if(null==$this->_dbTable){
-            $this->setDbTable('Application_Model_DbTable_Concerts');
+            $this->setDbTable('Application_Model_DbTable_Gallery');
         }
         
         return $this->_dbTable;
@@ -60,7 +60,7 @@ protected $_dbTable;
             $concert->setCity($row->city);
             $concert->setPlace($row->place);
             $concert->setTime($row->time);
-            $concert->setGallery((array)($row->findDependentRowset('Application_Model_DbTable_Images')));
+            $concert->setGallery((array)($row->findDependentRowset('Application_Model_DbTable_Gallery')));
             //
             $concerts[]=$concert;
           

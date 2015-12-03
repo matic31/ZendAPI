@@ -1,10 +1,10 @@
 <?php
 
-class Application_Model_DbTable_Gallery extends Zend_Db_Table_Abstract
+class Application_Model_DbTable_Images extends Zend_Db_Table_Abstract
 {
 
-    protected $_name = 'gallery';
-    protected $_id = 'idGallery';
+    protected $_name = 'image';
+    protected $_id = 'idImage';
     protected $_referenceMap=array(
         'Concert'=>array(
             'columns'=>array('idConcert'),
