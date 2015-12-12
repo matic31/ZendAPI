@@ -11,20 +11,23 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         $concertMapper= new Application_Model_ConcertMapper() ;
-         $cons=array();
-        foreach($concertMapper->fetchAll() as $row){
-         
-            //$konvertovan_red=(array)$row;
-            $cons[]=$row;
-            
-            
-        }
-        
-        /*$cons=new Application_Model_TestModel();
-        $c=$cons->fetchAll();*/
-        //echo $cons[1]['_time']."hahahahahahah";
-        echo $cons[0]->getCity();
-        print_r($cons);
+//         $cons=array();
+//        foreach($concertMapper->fetchAll() as $row){
+//         
+//            //$konvertovan_red=(array)$row;
+//            $cons[]=$row;
+//            
+//            
+//        }
+//        
+//        /*$cons=new Application_Model_TestModel();
+//        $c=$cons->fetchAll();*/
+//        //echo $cons[1]['_time']."hahahahahahah";
+//        echo $cons[0]->getCity();
+       // print_r($concertMapper->fetchAll());
+        //print_r($cons);
+        $imageMapper = new Application_Model_ImageMapper();
+        print_r($imageMapper->fetchAll());
     }
 
     public function manageAction()

@@ -54,7 +54,8 @@ protected $_dbTable;
         
         foreach ($resultSet as $row){
             $image=new Application_Model_Image();
-            $image->setIdImage($row->idImage)->setAlt($row->alt)->setUrl($row->url)->setConcert($row->findParentRow('Application_Model_DbTable_Concerts'));
+            $tmp=$row->findParentRow('Application_Model_DbTable_Concerts')->toArray();
+            $image->setIdImage($row->idImage)->setAlt($row->alt)->setUrl($row->url)->setConcert($tmp);
             
             $images[]=$image;
         }

@@ -45,23 +45,18 @@ protected $_dbTable;
             return;
         }
         $row=$result->current();
-        $concert->setId($row->idConcert);
-        $concert->setCity($row->city);
-        $concert->setPlace($row->place);
-        $concert->setTime($row->time);
+        $concert->setId($row->idConcert)->setCity($row->city)->setPlace($row->place)->setTime($row->time)->setGallery((array)($row->findDependentRowset('Application_Model_DbTable_Images')));
+             
     }
     
     public function fetchAll(){
         $resultSet=$this->getDbTable()->fetchAll();
         $concerts=array();
         foreach ($resultSet as $row){
+            $tmp = $row->findDependentRowset('Application_Model_DbTable_Images')->toArray();
             $concert=new Application_Model_Concert();
-            $concert->setId($row->idConcert);
-            $concert->setCity($row->city);
-            $concert->setPlace($row->place);
-            $concert->setTime($row->time);
-            $concert->setGallery((array)($row->findDependentRowset('Application_Model_DbTable_Images')));
-            //
+            $concert->setId($row->idConcert)->setCity($row->city)->setPlace($row->place)->setTime($row->time)->setGallery($tmp);
+            
             $concerts[]=$concert;
           
 

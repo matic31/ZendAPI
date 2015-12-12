@@ -8,6 +8,41 @@ class Application_Model_Concert
      public $_time;
      public $_gallery;
     
+     public function  __construct(array $options=null){
+    
+        if(is_array($options)){
+            $this->setOptions($options);
+        }
+    }
+    
+    public function _set($name,$value){
+    
+    $method='set'.$name;
+    if(('mapper'==$name) || !method_exists($this,$method)){
+       throw  new Exception('Svojstvo za Galeriju nije definisano');
+    }
+    $this->$method($value);
+        
+    }
+    
+    public function _get($name,$value){
+        $method='get'.$name;
+        if(('mapper'==$name) || !method_exists($this,$method)){
+            throw  new Exception('Svojstvo za Geleriju nije definisano');
+       }
+    }
+    
+    public function setOptions(array $options){
+       $methods=get_class_methods($this);
+       
+       foreach($options as $key=>$value){
+           $method='set'.ucfirst($key);
+           if(in_array($method,$methods)){
+               $this->$method($value);
+           }
+       }
+       return $this;
+    }
     
     function getId() {
         return $this->_id;
@@ -52,9 +87,6 @@ class Application_Model_Concert
     public function setGallery($gallery){
         $this->_gallery=$gallery;
         return $this;
-    }
-    public function toArray() {
-        //return array('idConcert' => $this->_id, '');
     }
 
 

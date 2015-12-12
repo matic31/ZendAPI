@@ -24,4 +24,23 @@ class RiseAgainst_RAManager {
         
     }
     
+    public function getConcert($id){
+        $concertMapper = new Application_Model_ConcertMapper();
+        $concert = new Application_Model_Concert();
+        $concertMapper->find($id, $concert);
+        return $concert;
+        
+    }
+    
+    public function getImages(){
+        $imageMapper = new Application_Model_ImageMapper();
+        $images = array();
+        foreach ($imageMapper->fetchAll() as $row) {
+            $images[] = $row;
+        }
+        
+        return $images;
+        
+    }
+    
 }

@@ -5,9 +5,10 @@
         <group>
             <file>file:/C:/xampp/htdocs/zend/RAService/application/models/Concert.php</file>
             <file>file:/C:/xampp/htdocs/zend/RAService/application/models/Image.php</file>
-            <file>file:/C:/xampp/htdocs/zend/RAService/application/models/ImageMapper.php</file>
             <file>file:/C:/xampp/htdocs/zend/RAService/application/models/DBTable/Images.php</file>
+            <file>file:/C:/xampp/htdocs/zend/RAService/application/models/ImageMapper.php</file>
             <file>file:/C:/xampp/htdocs/zend/RAService/application/models/DBTable/Concerts.php</file>
+            <file>file:/C:/xampp/htdocs/zend/RAService/library/RiseAgainst/RAManager.php</file>
             <file>file:/C:/xampp/htdocs/zend/RAService/application/models/ConcertMapper.php</file>
         </group>
     </open-files>
