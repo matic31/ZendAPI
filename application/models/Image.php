@@ -71,10 +71,6 @@ class Application_Model_Image
         $this->alt = $alt;
         return $this;
     }
-//    public function  getConcertCity(){
-//        $concert=$this->concert->export();
-//        return $concert['city'];
-//    }
 
 
 }
